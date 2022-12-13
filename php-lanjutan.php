@@ -94,33 +94,34 @@
 </head>
 <body>
     <h1> Input Nama dan Diulang</h1>
-    <form action= "<?php $_SERVER['PHP_SELF'] ?>" methode="post">
-        <label> Nama </label>
-        <input type="text" name="no">
-        <label> Jumlah </label>
+    <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+        <label>Nama</label>
+        <input type="text" name="nama">
+        <label>Jumlah</label>
         <input type="text" name="no">
         <input type="submit" name="submit" value="Submit">
     </form>
     <?php
         if(!empty($_POST['submit'])) {
 
-         switch($_POST['nama']) {
-           case "Cenya":
-              $pesan = $_POST['nama']." adalah orang Jawa";
-           break;
-           case "Ketut":
-             $pesan = $_POST['nama']." berasal dari Bali";
-           break;
-           default:
-             $pesan = $_POST['nama']." darimana ya?"; 
-          }
-    
-       for ($i=0; $i<$_POST['no'];$i++){
-            echo $pesan."<br>";
+            switch($_POST['nama']) {
+                case "Cenya":
+                    $pesan = $_POST['nama']." adalah orang Jawa";
+                break;
+                case "Ketut":
+                    $pesan = $_POST['nama']." berasal dari pulau Bali";
+                break;
+                default:
+                    $pesan = $_POST['nama']." darimana ya?";
+            
+            }
+
+            for ($i=0;$i<$_POST['no'];$i++) {
+                echo $pesan."<br>";
         }
     
     } else {
-        echo "Anda belum input nama dan jumlah";
+        echo "Anda belum input nama dan jumlah.";
     }
     ?>
 </body>
